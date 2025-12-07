@@ -24,8 +24,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./my-vite-app           # Location of your Vite project
+          file: ./my-vite-app/Dockerfile   # Correct Dockerfile path
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/my-vite-app:latest
